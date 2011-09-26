@@ -1,7 +1,7 @@
 task :default => [:test]
 
 PKG_NAME = "file-column"
-PKG_VERSION = "0.3.1"
+PKG_VERSION = "0.3.2"
 
 PKG_DIR = "release/#{PKG_NAME}-#{PKG_VERSION}"
 
@@ -34,3 +34,17 @@ task :test do
   sh "cd test; ruby magick_test.rb"
   sh "cd test; ruby magick_view_only_test.rb"
 end
+
+require 'jeweler'
+Jeweler::Tasks.new do |gem|
+  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
+  gem.name = "file_column"
+  gem.homepage = "http://github.com/tekin/file_column"
+  gem.license = "MIT"
+  gem.summary = %Q{file upload and rmagick image resizing}
+  gem.description = %Q{file upload and rmagick image resizing}
+  gem.email = "sebastian.kanthak@muehlheim.de"
+  gem.authors = ["Sebastian Kanthak"]
+  # dependencies defined in Gemfile
+end
+Jeweler::RubygemsDotOrgTasks.new
